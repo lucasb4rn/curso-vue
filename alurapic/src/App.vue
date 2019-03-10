@@ -3,11 +3,15 @@
 <div>
 
 
-<div>
-  <h1>{{tituloPagina}}</h1>
-  <li v-for="foto of fotos">
-     <img :src="foto.url" :alt="foto.titulo">
-  </li>
+<div class="corpo">
+  <h1 class="centralizado">{{tituloPagina}}</h1>
+  <ul class="lista-fotos">
+    <li class="lista-fotos-item" v-for="foto of fotos">
+      <img :src="foto.url" :alt="foto.titulo">
+    </li>
+  </ul>
+
+
 </div>
 
 
@@ -43,4 +47,28 @@ export default {
 
 
 <style>
+
+
+.corpo {
+
+font-family: Helvetica, sans-serif;
+margin: 0 auto;
+width: 88%;
+
+}
+
+.centralizado {
+
+  text-align: center;
+
+}
+
+.lista-fotos-item {
+
+  display: inline-block;
+  list-style: none;
+
+}
+
+
 </style>
