@@ -20,26 +20,27 @@
 export default {
   data () {
     return {
-      tituloPagina: 'Pagina de teste',
-
-     fotos: [
-       {
-       url: 'https://abrilexame.files.wordpress.com/2016/09/size_960_16_9_passarinho1.jpg',
-       titulo: 'passarinho1'
-       },
-      {
-        url: 'https://www.petz.com.br/blog/wp-content/uploads/2017/07/passarinhos02.jpg',
-        titulo: 'passarinho2'
-      }
-     ]
+      tituloPagina: 'AluraPics',
+     fotos: []
     }
+  },
+
+
+  created() {
+
+    this.$http.get('http://localhost:3000/v1/fotos')
+    .then(res => res.json())
+    .then(fotos => this.fotos = fotos, err => console.log(err));
+
+
   }
+
+
 }
+
 
 </script>
 
+
 <style>
-
-
-
 </style>
